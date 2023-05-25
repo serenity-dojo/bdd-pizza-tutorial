@@ -3,8 +3,8 @@ Feature: Order a pizza
   Rule: Users should be able to order pizzas and receive appropriate confirmation
     Example: Peter orders a basic pizza
       Given Peter wants to order the following pizza:
-        | size | crust | topping |
-        | 12   | thin  | cheese  |
+        | Size | Crust | Toppings |
+        | 12   | thin  | cheese   |
       When he places his order
       And he successfully pays for his order
       Then Peter should be sent a message confirming his order and estimated delivery time
@@ -12,7 +12,7 @@ Feature: Order a pizza
 
     Example: Peter orders several different custom-made pizzas
       Given Peter wants to order the following pizza:
-        | size | crust | style      | topping                   |
+        | Size | Crust | Style      | Toppings                  |
         | 12   | thin  | custom     | cheese, ham               |
         | 8    | thick | custom     | pepperoni, peppers, onion |
         | 10   | thin  | Margherita |                           |
@@ -36,7 +36,7 @@ Feature: Order a pizza
 
     Scenario Outline: Peter orders several different custom-made pizzas
       Given Peter is looking at the menu
-      When he selects a <Speciality> pizza
+      When he selects a "<Speciality>" pizza
       And he chooses the following options:
         | Size   | Crust   | Toppings   |
         | <Size> | <Crust> | <Toppings> |
@@ -50,7 +50,7 @@ Feature: Order a pizza
   Rule: Users can order speciality pizzas
     Example: Peter orders several different custom-made pizzas
       Given Peter wants to order the following pizza:
-        | size | crust | speciality      |
+        | Size | Crust | Speciality      |
         | 12   | thin  | Margherita      |
         | 12   | thick | Hawaiian        |
         | 10   | pan   | Pepperoni Feast |
